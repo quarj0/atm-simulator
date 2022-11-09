@@ -14,9 +14,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.TitledBorder;
+import javax.swing.ListSelectionModel;
+import javax.swing.table.DefaultTableModel;
 
 public class Main1 extends JFrame implements ActionListener {
 	/**
@@ -45,8 +46,8 @@ public class Main1 extends JFrame implements ActionListener {
 	 */
 	public Main1() {
 		verification = new JPanel();
-		verification.setBackground(new Color(70, 130, 180));
-		
+		verification.setBackground(new Color(170, 170, 210));
+		verification.setBorder(null);
 		verification.setBounds(380,240,435,309);
 		getContentPane().add(verification);
 		verification.setLayout(null);
@@ -61,10 +62,11 @@ public class Main1 extends JFrame implements ActionListener {
 		btnVerify = new JButton();
 		btnVerify.addActionListener(this);
 		btnVerify.setIcon(new ImageIcon(Main1.class.getResource("/img/fingerprint.gif")));
+		btnVerify.setBorder(null);
 		btnVerify.setBounds(150, 94, 150, 150);
 		verification.add(btnVerify);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\src\\img\\f6.jpg"));
+		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\f6.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -109,6 +111,7 @@ class Menu extends JFrame implements ActionListener {
 		menu.setBounds(200, 180, 770, 439);
 		getContentPane().add(menu);
 		menu.setLayout(null);
+		menu.setBorder(null);
 		getContentPane().setLayout(null);
 
 		Cancel = new JButton("Exit");
@@ -117,6 +120,7 @@ class Menu extends JFrame implements ActionListener {
 		Cancel.setBounds(638, 300, 101, 34);
 		Cancel.addActionListener(this);
 		Cancel.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+		Cancel.setBorder(null);
 		menu.add(Cancel);
 
 		CheckBalance = new JButton("Check Balance");
@@ -124,6 +128,7 @@ class Menu extends JFrame implements ActionListener {
 		CheckBalance.setBackground(new Color(30, 144, 255));
 		CheckBalance.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		CheckBalance.setBounds(40, 63, 152, 34);
+		CheckBalance.setBorder(null);
 		menu.add(CheckBalance);
 		CheckBalance.addActionListener(this);
 
@@ -132,10 +137,12 @@ class Menu extends JFrame implements ActionListener {
 		Withdraw.setBackground(new Color(30, 144, 255));
 		Withdraw.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		Withdraw.setBounds(40, 126, 152, 36);
+		Withdraw.setBorder(null);
 		menu.add(Withdraw);
 		Withdraw.addActionListener(this);
 
 		Transfer = new JButton("Transfer");
+		Transfer.setBorder(null);
 		Transfer.setForeground(new Color(255, 255, 255));
 		Transfer.setBackground(new Color(30, 144, 255));
 		Transfer.setFont(new Font("Segoe UI", Font.PLAIN, 18));
@@ -144,6 +151,7 @@ class Menu extends JFrame implements ActionListener {
 		Transfer.addActionListener(this);
 
 		Cardless = new JButton("Cardless Withdrawal");
+		Cardless.setBorder(null);
 		Cardless.setForeground(new Color(255, 255, 255));
 		Cardless.setBackground(new Color(30, 144, 255));
 		Cardless.setFont(new Font("Segoe UI", Font.PLAIN, 18));
@@ -152,6 +160,7 @@ class Menu extends JFrame implements ActionListener {
 		Cardless.addActionListener(this);
 
 		Mini = new JButton("Mini Statement");
+		Mini.setBorder(null);
 		Mini.setForeground(new Color(255, 255, 255));
 		Mini.setBackground(new Color(30, 144, 255));
 		Mini.setFont(new Font("Segoe UI", Font.PLAIN, 18));
@@ -160,6 +169,7 @@ class Menu extends JFrame implements ActionListener {
 		Mini.addActionListener(this);
 
 		Statement = new JButton("Statement");
+		Statement.setBorder(null);
 		Statement.setForeground(new Color(255, 255, 255));
 		Statement.setBackground(new Color(30, 144, 255));
 		Statement.setFont(new Font("Segoe UI", Font.PLAIN, 18));
@@ -167,7 +177,7 @@ class Menu extends JFrame implements ActionListener {
 		menu.add(Statement);
 		Statement.addActionListener(this);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\src\\img\\img2.jpg"));
+		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\img2.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -203,8 +213,7 @@ class Menu extends JFrame implements ActionListener {
 		} else if (e.getSource() == Statement) {
 			new Statement();
 			dispose();
-		} else if (e.getSource() == Cardless) {
-//			new Cardless();
+		} else if (e.getSource() == Cardless) {;
 			JOptionPane.showMessageDialog(null, "Cardless withdrawal is unvailable!");
 		} else if (e.getSource() == Cancel) {
 			new Main1();
@@ -241,9 +250,11 @@ class CheckBalance extends JFrame implements ActionListener {
 		Current_Account.setBackground(new Color(47, 79, 79));
 		Current_Account.setBounds(31, 39, 176, 34);
 		Current_Account.addActionListener(this);
+		Current_Account.setBorder(null);
 		panel.add(Current_Account);
 		
 		Back = new JButton("Back");
+		Back.setBorder(null);
 		Back.setForeground(Color.WHITE);
 		Back.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		Back.setBackground(Color.BLUE);
@@ -252,14 +263,16 @@ class CheckBalance extends JFrame implements ActionListener {
 		panel.add(Back);
 		
 		Saving_Account = new JButton("Savings Account");
+		Saving_Account.setBorder(null);
 		Saving_Account.setBounds(31, 104, 176, 34);
-		Saving_Account.setForeground(new Color(255, 255, 255));
+		Saving_Account.setForeground(Color.white);
 		Saving_Account.setBackground(new Color(47, 79, 79));
 		Saving_Account.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		Saving_Account.addActionListener(this);
 		panel.add(Saving_Account);
 		
 		Fixed_Deposit = new JButton("Fixed Deposit");
+		Fixed_Deposit.setBorder(null);
 		Fixed_Deposit.setForeground(Color.WHITE);
 		Fixed_Deposit.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		Fixed_Deposit.setBackground(new Color(47, 79, 79));
@@ -267,7 +280,7 @@ class CheckBalance extends JFrame implements ActionListener {
 		Fixed_Deposit.addActionListener(this);
 		panel.add(Fixed_Deposit);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\src\\img\\img3.jpg"));
+		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\img3.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -308,31 +321,83 @@ class Mini extends JFrame implements ActionListener {
 	 */
 	private static final long serialVersionUID = 8145073001561542640L;
 	JButton Back;
-	JPanel mini;
+	JPanel panel;
+	JTable table;
 
 	public Mini() {
-
-		mini = new JPanel();
-		mini.setBorder(new TitledBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null), "Mini Statement",
-				TitledBorder.LEADING, TitledBorder.TOP, null, Color.DARK_GRAY));
-		mini.setBounds(0, 0, 1350, 729);
-		getContentPane().add(mini);
+		
+		panel = new JPanel();
+		panel.setBackground(getBackground());
+		panel.setBounds(250, 50, 780, 450);
+		getContentPane().add(panel);
+		panel.setLayout(null);
 		getContentPane().setLayout(null);
-		mini.setLayout(null);
 
 		Back = new JButton("Back");
-		Back.setBounds(640, 600, 78, 34);
-		Back.setBackground(new Color(0, 100, 250));
-		Back.setForeground(Color.white);
+		Back.setForeground(Color.WHITE);
+		Back.setBorder(null);
+		Back.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+		Back.setBackground(new Color(119, 136, 153));
+		Back.setBounds(350, 400, 100, 34);
 		Back.addActionListener(this);
+		panel.add(Back);
 
-		add(mini);
-		add(Back);
-
+		table = new JTable();
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.setFillsViewportHeight(true);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Transaction Type", "Amount", "Fee Charged", "Descritption", "Date"},
+				{"Credit", "500", "0.00", "From Mobile account", "20-12-22"},
+				{"Credit", "120", "0.00", "From external address", "16-02-22"},
+				{"Credit", "744", "0.00", "Deposit ", "18-05-22"},
+				{"Debit", "650", "0.31", "Withdrawal ATM Savings acc.", "21-06-22"},
+				{"Debit", "20.50", "2.50", "Transfer from savings to mobile acc.", "12-05-22"},
+				{"Credit", "3600", "0.00", "Transfer from savings to mobile", "06-08-22"},
+				{"Debit", "4100", "41.00", "Transfer from mobile account", "12-05-22"},
+			
+			},
+			new String[] {
+				"Transactions Type", "Amount", "Fee Charged", "Description", "Date"
+			}
+		) {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+			@SuppressWarnings("rawtypes")
+			Class[] columnTypes = new Class[] {
+				String.class, Object.class, Object.class, String.class, Object.class
+			};
+			@SuppressWarnings({ "unchecked", "rawtypes" })
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+		});
+		table.getColumnModel().getColumn(0).setResizable(false);
+		table.getColumnModel().getColumn(0).setPreferredWidth(120);
+		table.getColumnModel().getColumn(1).setResizable(false);
+		table.getColumnModel().getColumn(1).setPreferredWidth(93);
+		table.getColumnModel().getColumn(2).setPreferredWidth(118);
+		table.getColumnModel().getColumn(3).setResizable(false);
+		table.getColumnModel().getColumn(3).setPreferredWidth(188);
+		table.getColumnModel().getColumn(4).setPreferredWidth(90);
+		table.setCellSelectionEnabled(false);
+		table.setColumnSelectionAllowed(false);
+		table.setBounds(10, 11, 750, 363);
+		table.setBorder(null);
+		panel.add(table);
+		add(panel);
+		panel.add(Back);
+		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\f5.jpg"));
+		// TO-DO
+		image.setBounds(0,0,1280,720);
+		getContentPane().add(image);
+		
 		setSize(1280, 720);
 		setLayout(null);
 		setVisible(true);
-		getContentPane().setBackground(new Color(220, 220, 220));
+		getContentPane().setBackground(new Color(495237));
 
 		setDefaultCloseOperation(3);
 	}
@@ -349,13 +414,91 @@ class Mini extends JFrame implements ActionListener {
 }
 
 class Statement extends JFrame implements ActionListener {
-
+JPanel panel;
+JButton Back;
+JTable table;
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 8145073001561542640L;
 
 	public Statement() {
+		panel = new JPanel();
+		panel.setBackground(getBackground());
+		panel.setBounds(250, 50, 780, 450);
+		getContentPane().add(panel);
+		panel.setLayout(null);
+		getContentPane().setLayout(null);
+
+		Back = new JButton("Back");
+		Back.setForeground(Color.WHITE);
+		Back.setBorder(null);
+		Back.setFont(new Font("Segoe UI", Font.PLAIN, 18));
+		Back.setBackground(new Color(119, 136, 153));
+		Back.setBounds(350, 400, 100, 34);
+		Back.addActionListener(this);
+		panel.add(Back);
+
+		table = new JTable();
+		table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		table.setFillsViewportHeight(true);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Transaction Type", "Amount", "Fee Charged", "Descritption", "Date"},
+				{"Credit", "500", "0.00", "From Mobile account", "20-12-22"},
+				{"Credit", "120", "0.00", "From external address", "16-02-22"},
+				{"Credit", "744", "0.00", "Deposit ", "18-05-22"},
+				{"Debit", "650", "0.31", "Withdrawal ATM Savings acc.", "21-06-22"},
+				{"Debit", "20.50", "2.50", "Transfer from savings to mobile acc.", "12-05-22"},
+				{"Credit", "3600", "0.00", "Transfer from savings to mobile", "06-08-22"},
+				{"Debit", "4100", "41.00", "Transfer from mobile account", "12-05-22"},
+				{"Debit", "20.00", "0.20", "Airtime", "13-05-22"},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"Transactions Type", "Amount", "Fee Charged", "Description", "Date"
+			}
+		) {
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+			@SuppressWarnings("rawtypes")
+			Class[] columnTypes = new Class[] {
+				String.class, Object.class, Object.class, String.class, Object.class
+			};
+			@SuppressWarnings({ "unchecked", "rawtypes" })
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+		});
+		table.getColumnModel().getColumn(0).setResizable(false);
+		table.getColumnModel().getColumn(0).setPreferredWidth(120);
+		table.getColumnModel().getColumn(1).setResizable(false);
+		table.getColumnModel().getColumn(1).setPreferredWidth(93);
+		table.getColumnModel().getColumn(2).setPreferredWidth(118);
+		table.getColumnModel().getColumn(3).setResizable(false);
+		table.getColumnModel().getColumn(3).setPreferredWidth(188);
+		table.getColumnModel().getColumn(4).setPreferredWidth(90);
+		table.setCellSelectionEnabled(false);
+		table.setColumnSelectionAllowed(false);
+		table.setBounds(10, 11, 750, 363);
+		table.setBorder(null);
+		panel.add(table);
+		add(panel);
+		panel.add(Back);
+		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\f6.jpg"));
+		// TO-DO
+		image.setBounds(0,0,1280,720);
+		getContentPane().add(image);
 		setSize(1280, 720);
 		setLayout(null);
 		setVisible(true);
@@ -366,17 +509,21 @@ class Statement extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		if (e.getSource() == Back) {
+			new Menu();
+			dispose();
+		}
 	}
 
 }
 
 class Withdraw extends JFrame implements ActionListener {
 
+	JButton back;
 	JButton savings;
 	JButton current;
 	JPanel panel;
-	JButton back;
+	
 	private static final long serialVersionUID = 8145073001561542640L;
 
 	public Withdraw() {
@@ -386,29 +533,32 @@ class Withdraw extends JFrame implements ActionListener {
 		panel.setBounds(350, 150, 619, 344);
 		getContentPane().add(panel);
 		panel.setLayout(null);
-//		getContentPane().setLayout(null);
+		getContentPane().setLayout(null);
 		
 		savings = new JButton("Savings");
+		savings.setBorder(null);
 		savings.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		savings.setBounds(31, 104, 176, 34);
 		savings.addActionListener(this);
 		panel.add(savings);
 		
 		current = new JButton("Current");
+		current.setBorder(null);
 		current.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		current.setBounds(31, 39, 176, 34);
 		current.addActionListener(this);
 		panel.add(current);
 		
 		back = new JButton("Back");
+		back.setBorder(null);
 		back.setForeground(Color.WHITE);
 		back.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		back.setBackground(Color.BLUE);
 		back.setBounds(482, 195, 101, 34);
-		back.addActionListener(this);
 		panel.add(back);
+		back.addActionListener(this);
 //	
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\src\\img\\img1.jpeg"));
+		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\img1.jpeg"));
 		
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -422,22 +572,25 @@ class Withdraw extends JFrame implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if (e.getSource() == savings) 
-			new MoneyMenu();
-			dispose();
-		
-		
-		 if(e.getSource()==current) {
-			new MoneyMenu();
-			dispose();
+		try {
+			if (e.getSource() == savings) {
+				new MoneyMenu();
+				dispose();
+			}
+			else  if(e.getSource()==current) {
+				new MoneyMenu();
+				dispose();
+			}
+			else if (e.getSource() == back) {
+				new Menu();
+				dispose();
+			}
+				
+		}catch (Exception e1) {
+			JOptionPane.showMessageDialog(null, e1);
+			
 		}
 		
-		else if (e.getSource() == back) {
-			new Menu();
-			dispose();
-		}	
-				
 	}
 }
 
@@ -468,70 +621,77 @@ class MoneyMenu extends JFrame implements ActionListener {
 		getContentPane().setLayout(null);
 		
 		btn20 = new JButton("20");
+		btn20.setBorder(null);
 		btn20.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		btn20.setBounds(83, 107, 89, 33);
 		back.addActionListener(this);
 		panel.add(btn20);
 		
-		btn50 = new JButton("20");
+		btn50 = new JButton("50");
+		btn50.setBorder(null);
 		btn50.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		btn50.setBounds(83, 169, 89, 33);
-		back.addActionListener(this);
+		btn50.addActionListener(this);
+		panel.add(btn50);
 
 		btn100 = new JButton("100");
+		btn100.setBorder(null);
 		btn100.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		btn100.setBounds(83, 225, 89, 33);
-		back.addActionListener(this);
-
+		btn100.addActionListener(this);
+		panel.add(btn100);
+		
+		btn200 = new JButton("200");
+		btn200.setBorder(null);
+		btn200.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+		btn200.setBounds(83, 267, 89, 33);
+		btn200.addActionListener(this);
+		panel.add(btn2000);
+		
 		btn500 = new JButton("500");
+		btn500.setBorder(null);
 		btn500.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		btn500.setBounds(594, 107, 89, 33);
-		back.addActionListener(this);
-
+		btn500.addActionListener(this);
+		panel.add(btn500);
+		
 		btn1000 = new JButton("1000");
+		btn1000.setBorder(null);
 		btn1000.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		btn1000.setBounds(594, 169, 89, 33);
-		back.addActionListener(this);
+		btn1000.addActionListener(this);
+		panel.add(btn1000);
 
 		btn2000 = new JButton("2000");
+		btn2000.setBorder(null);
 		btn2000.setFont(new Font("Times New Roman", Font.PLAIN, 20));
 		btn2000.setBounds(594, 225, 89, 33);
-		back.addActionListener(this);
+		btn2000.addActionListener(this);
+		panel.add(btn2000);
 
 		ok = new JButton("OK");
+		ok.setBorder(null);
 		ok.setBackground(new Color(50, 205, 50));
 		ok.setBounds(386, 374, 101, 34);
 		panel.add(ok);
 		ok.addActionListener(this);
 
 		back = new JButton("BACK");
+		back.setBorder(null);
 		back.setForeground(Color.WHITE);
 		back.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		back.setBackground(Color.BLUE);
 		back.setBounds(594, 325, 101, 34);
 		back.addActionListener(this);
 		panel.add(back);
-		
-		cancel = new JButton("Cancel");
-		cancel.setBackground(Color.RED);
-		cancel.setBounds(221, 374, 101, 34);
-		cancel.addActionListener(this);
 
 		input = new JTextField();
 		input.setFont(new Font("Segoe UI", Font.PLAIN, 20));
 		input.setBounds(278, 23, 194, 41);
-		add(input);
+		panel.add(input);
 		input.setColumns(10);
 
-		
-		
-		
-		panel.add(btn50);
-		panel.add(btn100);
-		panel.add(btn1000);
-		panel.add(btn200);
-		panel.add(btn500);
-		panel.add(btn2000);
+
 
 	}
 
@@ -551,16 +711,15 @@ class MoneyMenu extends JFrame implements ActionListener {
 				double amt = 500;
 				JOptionPane.showMessageDialog(null, "You have successfully withdraw an amount of Gh¢" + amt);
 			} else if (e.getSource() == btn1000) {
-				double amt = 1000;
-				JOptionPane.showMessageDialog(null, "You have successfully withdraw an amount of Gh¢" + amt);
+				
+				JOptionPane.showMessageDialog(null, "Not enough balance!");
 			} else if (e.getSource() == btn200) {
 				double amt = 200;
 				JOptionPane.showMessageDialog(null, "You have successfully withdraw an amount of Gh¢" + amt);
 			} else if (e.getSource() == btn2000) {
-				double amt = 2000;
-				JOptionPane.showMessageDialog(null, "You have successfully withdraw an amount of Gh¢" + amt);
+				JOptionPane.showMessageDialog(null, "Not enough balance!");
 			}
-			if (e.getSource() == back) {
+			else if (e.getSource() == back) {
 			new Withdraw();
 				dispose();
 			}
@@ -623,6 +782,7 @@ class Bank extends JFrame implements ActionListener {
 		txtAccNum.setColumns(10);
 
 		clear = new JButton("Clear");
+		clear.setBorder(null);
 		clear.setBackground(Color.RED);
 		clear.setForeground(Color.white);
 		clear.setFont(new Font("Segoe UI", Font.PLAIN, 18));
@@ -631,6 +791,7 @@ class Bank extends JFrame implements ActionListener {
 		clear.addActionListener(this);
 
 		btnOk = new JButton("OK");
+		btnOk.setBorder(null);
 		btnOk.setBackground(new Color(50, 205, 50));
 		btnOk.setForeground(Color.white);
 		btnOk.setFont(new Font("Segoe UI", Font.PLAIN, 18));
@@ -639,6 +800,7 @@ class Bank extends JFrame implements ActionListener {
 		btnOk.addActionListener(this);
 
 		btnBack = new JButton("Back");
+		btnBack.setBorder(null);
 		btnBack.setForeground(Color.WHITE);
 		btnBack.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 		btnBack.setBackground(Color.BLUE);
@@ -661,7 +823,7 @@ class Bank extends JFrame implements ActionListener {
 		txtAmt.setBounds(198, 97, 160, 32);
 		panel.add(txtAmt);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\src\\img\\j-banks.jpg"));
+		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\j-banks.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -710,9 +872,9 @@ class Bank extends JFrame implements ActionListener {
 		}
 		if (e.getSource()==clear) {
 			dstBank.setSelectedIndex(0);
-			txtAccNum.setText("");
-			txtAmt.setText("");
-			
+			txtAccNum.setText(" ");
+			txtAmt.setText(" ");
+
 		}
 
 	}
@@ -737,6 +899,7 @@ class Transfer extends JFrame implements ActionListener {
 		getContentPane().setLayout(null);
 		
 		back = new JButton("Back");
+		back.setBorder(null);
 		back.setBackground(new Color(0, 0, 255));
 		back.setForeground(new Color(255, 255, 255));
 		back.setBounds(482, 195, 101, 34);
@@ -744,22 +907,24 @@ class Transfer extends JFrame implements ActionListener {
 		back.addActionListener(this);
 			
 		momo = new JButton("To Mobile Account");
+		momo.setBorder(null);
 		momo.setBounds(58, 131, 150, 34);
 		panel.add(momo);
 		momo.addActionListener(this);
 		
 		diffBank = new JButton("To different Bank");
+		diffBank.setBorder(null);
 		diffBank.setBounds(58, 78, 150, 34);
 		panel.add(diffBank);
 		diffBank.addActionListener(this);
 		
 		fixDepo = new JButton("To fixed Deposit");
+		fixDepo.setBorder(null);
 		fixDepo.setBounds(450, 78, 150, 34);
 		panel.add(fixDepo);
 		fixDepo.addActionListener(this);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\src\\img\\img2.jpg"));
-		// TO-DO
+		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\img2.jpg"));
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
 		
@@ -827,6 +992,7 @@ public MobileTransfer() {
 	panel.add(combo);
 	
 	clear = new JButton("Clear");
+	clear.setBorder(null);
 	clear.setBackground(Color.RED);
 	clear.setForeground(Color.white);
 	clear.setFont(new Font("Segoe UI", Font.PLAIN, 18));
@@ -835,6 +1001,7 @@ public MobileTransfer() {
 	clear.addActionListener(this);
 
 	ok = new JButton("OK");
+	ok.setBorder(null);
 	ok.setBackground(new Color(50, 205, 50));
 	ok.setForeground(Color.white);
 	ok.setFont(new Font("Segoe UI", Font.PLAIN, 18));
@@ -843,6 +1010,7 @@ public MobileTransfer() {
 	ok.addActionListener(this);
 
 	back = new JButton("Back");
+	back.setBorder(null);
 	back.setForeground(Color.WHITE);
 	back.setFont(new Font("Segoe UI", Font.PLAIN, 18));
 	back.setBackground(Color.BLUE);
@@ -870,7 +1038,7 @@ public MobileTransfer() {
 	amount.setBounds(198, 97, 160, 32);
 	panel.add(amount);
 	
-	JLabel image= new JLabel(new ImageIcon("D:\\test\\src\\img\\f4.jpg"));
+	JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\f4.jpg"));
 	// TO-DO
 	image.setBounds(0,0,1280,720);
 	getContentPane().add(image);
@@ -922,8 +1090,8 @@ public MobileTransfer() {
 		
 		}
 		if(e.getSource()==clear)
-			amount.setText("");
-			Num.setText("");
+			amount.setText(" ");
+			Num.setText(" ");
 		combo.setSelectedIndex(0);
 		
 		if(e.getSource()==back) {
