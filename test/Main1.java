@@ -1,4 +1,4 @@
-package test;
+
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -61,12 +61,12 @@ public class Main1 extends JFrame implements ActionListener {
 
 		btnVerify = new JButton();
 		btnVerify.addActionListener(this);
-		btnVerify.setIcon(new ImageIcon(Main1.class.getResource("/img/fingerprint.gif")));
+		btnVerify.setIcon(new ImageIcon(Main1.class.getResource("fingerprint.gif")));
 		btnVerify.setBorder(null);
 		btnVerify.setBounds(150, 94, 150, 150);
 		verification.add(btnVerify);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\f6.jpg"));
+		JLabel image= new JLabel(new ImageIcon("f6.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -177,7 +177,7 @@ class Menu extends JFrame implements ActionListener {
 		menu.add(Statement);
 		Statement.addActionListener(this);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\img2.jpg"));
+		JLabel image= new JLabel(new ImageIcon("img2.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -280,7 +280,7 @@ class CheckBalance extends JFrame implements ActionListener {
 		Fixed_Deposit.addActionListener(this);
 		panel.add(Fixed_Deposit);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\img3.jpg"));
+		JLabel image= new JLabel(new ImageIcon("img3.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -389,7 +389,7 @@ class Mini extends JFrame implements ActionListener {
 		panel.add(table);
 		add(panel);
 		panel.add(Back);
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\f5.jpg"));
+		JLabel image= new JLabel(new ImageIcon("f5.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -495,7 +495,7 @@ JTable table;
 		panel.add(table);
 		add(panel);
 		panel.add(Back);
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\f6.jpg"));
+		JLabel image= new JLabel(new ImageIcon("f6.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -558,7 +558,7 @@ class Withdraw extends JFrame implements ActionListener {
 		panel.add(back);
 		back.addActionListener(this);
 //	
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\img1.jpeg"));
+		JLabel image= new JLabel(new ImageIcon("img1.jpeg"));
 		
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -823,7 +823,7 @@ class Bank extends JFrame implements ActionListener {
 		txtAmt.setBounds(198, 97, 160, 32);
 		panel.add(txtAmt);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\j-banks.jpg"));
+		JLabel image= new JLabel(new ImageIcon("j-banks.jpg"));
 		// TO-DO
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
@@ -924,7 +924,7 @@ class Transfer extends JFrame implements ActionListener {
 		panel.add(fixDepo);
 		fixDepo.addActionListener(this);
 		
-		JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\img2.jpg"));
+		JLabel image= new JLabel(new ImageIcon("img2.jpg"));
 		image.setBounds(0,0,1280,720);
 		getContentPane().add(image);
 		
@@ -1038,7 +1038,7 @@ public MobileTransfer() {
 	amount.setBounds(198, 97, 160, 32);
 	panel.add(amount);
 	
-	JLabel image= new JLabel(new ImageIcon("D:\\test\\res\\img\\f4.jpg"));
+	JLabel image= new JLabel(new ImageIcon("f4.jpg"));
 	// TO-DO
 	image.setBounds(0,0,1280,720);
 	getContentPane().add(image);
